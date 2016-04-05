@@ -707,7 +707,7 @@ SIDE EFFECTS
 
 ===========================================================================*/
 void loc_eng_nmea_generate_sv(loc_eng_data_s_type *loc_eng_data_p,
-                              const QcomSvStatus &svStatus, const GpsLocationExtended &locationExtended)
+                              const QtiGnssSvStatus &svStatus, const GpsLocationExtended &locationExtended)
 {
     ENTRY_LOG();
 
