@@ -188,6 +188,11 @@ public:
         return mLocApi->setSUPLVersion(version);
     }
     inline enum loc_api_adapter_err
+        setNMEATypes (uint32_t typesMask)
+    {
+        return mLocApi->setNMEATypes(typesMask);
+    }
+    inline enum loc_api_adapter_err
         setLPPConfig(uint32_t profile)
     {
         return mLocApi->setLPPConfig(profile);
