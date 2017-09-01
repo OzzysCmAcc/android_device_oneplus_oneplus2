@@ -201,6 +201,9 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl
+
+PRODUCT_PACKAGES += \
     lights.msm8994
 
 # LiveDisplay native
