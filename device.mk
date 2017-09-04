@@ -287,7 +287,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated-V1.0-java \
     librmnetctl \
-    libxml2
+    libxml2 \
+    rild_socket
 
 # Sensors
 PRODUCT_PACKAGES += \
