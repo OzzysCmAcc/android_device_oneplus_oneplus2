@@ -148,7 +148,7 @@ vendor/lib/libchromatix_ov5648_30fps_snapshot.so
 vendor/lib/libchromatix_ov5648_30fps_video.so
 vendor/lib/libchromatix_ov5648_common.so
 
-# Camera firmware
+# Camera firmware - 3.6.0
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
@@ -232,7 +232,7 @@ vendor/lib64/libvendorconn.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
-# Display calibration
+# Display calibration - 3.6.0
 -etc/pp_calib_data_jd35695_1080p_cmd_mode_dsi_panel.xml
 
 # DPM
@@ -370,7 +370,7 @@ vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libscale.so
 vendor/lib64/libuiblur.so
 
-# Graphics firmware
+# Graphics firmware 3.6.0
 etc/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw
 
@@ -378,7 +378,7 @@ etc/firmware/a420_pm4.fw
 vendor/lib/hw/keystore.msm8994.so
 vendor/lib64/hw/keystore.msm8994.so
 
-# Listen
+# Listen - 3.6.0
 vendor/lib/hw/sound_trigger.primary.msm8994.so
 
 # Media
@@ -430,7 +430,7 @@ vendor/etc/perf-profile5.conf
 vendor/lib/libqti-perfd-client.so
 vendor/lib64/libqti-perfd-client.so
 
-# Peripheral manager
+# Peripheral manager - 3.6.0
 bin/pm-proxy
 bin/pm-service
 vendor/lib/libperipheral_client.so
@@ -568,7 +568,7 @@ vendor/lib64/libsensor_thresh.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
-# Thermal
+# Thermal - 3.6.0
 etc/thermal-engine.conf
 vendor/bin/thermal-engine
 vendor/lib/libthermalclient.so
@@ -583,7 +583,7 @@ vendor/lib/libTimeService.so
 vendor/lib64/libTimeService.so
 -vendor/lib64/libtime_genoff.so
 
-# TP Firmware
+# TP Firmware - 3.6.0
 etc/firmware/tp/14049/14049_FW_S1302.img
 etc/firmware/tp/14049/14049_FW_S3320_jdi.img
 
