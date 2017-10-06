@@ -280,7 +280,7 @@ lib64/lib_fpc_tac_shared.so
 vendor/lib/hw/gatekeeper.msm8994.so
 vendor/lib64/hw/gatekeeper.msm8994.so
 
-# GPS
+# GPS - OxygenOS 3.6.0 expect *.xml, jar, apk
 bin/loc_launcher
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
