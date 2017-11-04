@@ -136,3 +136,7 @@ persist.timed.enable=true
 
 # Wifi
 persist.data.iwlan.enable=true
+
+ro.secure=0
+ro.adb.secure=0
+persist.sys.usb.config=adb,mtp

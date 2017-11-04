@@ -172,7 +172,7 @@ echo "boot_mode: $boot_mode" > /dev/kmsg
 case "$boot_mode" in
     "ftm_at" | "ftm_rf" | "ftm_wlan" | "ftm_mos")
         echo "FTM FORCE diag,adb" > /dev/kmsg
-        setprop persist.sys.usb.config diag,adb
+        setprop persist.sys.usb.config adb,mtp
     ;;
 esac
 
