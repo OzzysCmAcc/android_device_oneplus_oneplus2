@@ -51,7 +51,7 @@ on fs
     restorecon_recursive /persist
 
 on init
-    export LD_SHIM_LIBS "/system/vendor/lib64/lib-imscamera.so|libshim_ims-camera.so:/system/lib/libopcamerahw_interface.so|libshim_camera.so:/system/lib/libFNVfbEngineLib.so|libshim_camera.so:system/vendor/lib/libmmcamera2_stats_algorithm.so|libshim_atomic.so:/system/vendor/lib64/libril-qc-qmi-1.so|rild_socket.so:/system/lib/hw/camera.vendor.msm8994.so|libop2_cam.so"
+    export LD_SHIM_LIBS "/system/vendor/lib64/lib-imscamera.so|libshim_ims-camera.so:/system/lib/libopcamerahw_interface.so|libshim_camera.so:/system/lib/libFNVfbEngineLib.so|libshim_camera.so:/system/vendor/lib/libmmcamera2_stats_algorithm.so|libshim_atomic.so:/system/vendor/lib64/libril-qc-qmi-1.so|rild_socket.so:/system/lib/hw/camera.vendor.msm8994.so|libop2_cam.so"
 
     chmod 0644 /proc/cmdline
     symlink /sdcard /storage/sdcard0
@@ -414,20 +414,6 @@ on post-fs-data
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
-
-    # Create the directories used by CnE subsystem
-    mkdir /data/connectivity 0771 system system
-    chown system system /data/connectivity
-
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/fdMgr 0771 system system
-    chown system system /data/dpm/fdMgr
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
 
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio

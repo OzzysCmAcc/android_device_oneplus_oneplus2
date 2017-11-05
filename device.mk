@@ -279,6 +279,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio.deprecated-V1.0-java \
     libcnefeatureconfig \
     librmnetctl \
     libxml2 \
