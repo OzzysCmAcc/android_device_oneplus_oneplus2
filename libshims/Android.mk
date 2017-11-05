@@ -64,7 +64,7 @@ LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_32_BIT_ONLY := true
-LOCAL_SHARED_LIBRARIES := libsensor libui
+LOCAL_SHARED_LIBRARIES := libgui libui libsensor
 
 include $(BUILD_SHARED_LIBRARY)
 
