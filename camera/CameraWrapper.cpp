@@ -65,6 +65,34 @@ camera_module_t HAL_MODULE_INFO_SYM = {
     .reserved = {0}, /* remove compilation warnings */
 };
 
+static int load(const char *path,
+        const struct hw_module_t **pHmi)
+{
+    int status = 0;
+    void *handle = NULL;
+    struct hw_module_t *hmi = NULL;
+
+    handle = dlopen(path, RTLD_NOW);
+    if (handle == NULL) {
+        status = -EINVAL;
+        goto done;
+    }
+
+    hmi = (struct hw_module_t *)dlsym(handle,
+        HAL_MODULE_INFO_SYM_AS_STR);
+    if (hmi == NULL) {
+        status = -EINVAL;
+        goto done;
+    }
+
+    hmi->dso = handle;
+
+    done:
+    *pHmi = hmi;
+
+    return status;
+}
+
 static int check_vendor_module()
 {
     int rv = 0;
@@ -73,7 +101,7 @@ static int check_vendor_module()
     if (gVendorModule)
         return 0;
 
-    rv = hw_get_module_by_class("camera", "vendor",
+    rv = load("/system/lib/hw/camera.vendor.msm8994.so",
             (const hw_module_t**)&gVendorModule);
     if (rv)
         ALOGE("failed to open vendor camera module");

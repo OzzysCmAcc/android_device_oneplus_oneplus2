@@ -53,7 +53,7 @@ ro.data.large_tcp_window_size=true
 
 # Dex2oat limits
 dalvik.vm.boot-dex2oat-threads=4
-dalvik.vm.dex2oat-threads=4
+dalvik.vm.dex2oat-threads=2
 dalvik.vm.image-dex2oat-threads=4
 
 # GPS
@@ -63,7 +63,6 @@ ro.gps.agps_provider=1
 ro.pip.gated=0
 
 # Graphics
-dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 persist.hwc.enable_vds=1
@@ -85,18 +84,11 @@ media.stagefright.enable-player=true
 media.stagefright.enable-qcp=true
 media.stagefright.enable-scan=true
 media.stagefright.log-uri=1
-persist.media.treble_omx=false
 mmp.enable.3g2=true
 # Get camera working with mm blobs
 media.stagefright.legacyencoder=true
 media.stagefright.less-secure=true
-
-# ims stuff
-persist.dbg.ims_volte_enable=1
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=0
-persist.data.iwlan.enable=true
-persist.dbg.wfc_avail_ovr=0
+persist.media.treble_omx=false
 
 # QC vendor extension
 ro.vendor.extension_library=libqti-perfd-client.so
@@ -130,9 +122,6 @@ persist.data.qmi.adb_logmask=0
 ro.qc.sdk.sensors.gestures=true
 ro.qc.sdk.gestures.camera=false
 ro.qc.sdk.camera.facialproc=false
-
-# Storage
-ro.sys.sdcardfs=true
 
 # Time services
 persist.timed.enable=true

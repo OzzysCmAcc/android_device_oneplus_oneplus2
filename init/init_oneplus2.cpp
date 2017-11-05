@@ -1,5 +1,6 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
+   Copyright (C) 2017, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -29,10 +30,10 @@
 
 #include <stdlib.h>
 
-#include "property_service.h"
 #include <android-base/properties.h>
-#include "log.h"
-#include "util.h"
+
+#include "property_service.h"
+#include "vendor_init.h"
 
 using android::base::GetProperty;
 
@@ -45,7 +46,7 @@ void init_variant_properties() {
     if (platform != ANDROID_TARGET)
         return;
 
-    rf_version = GetProperty("ro.boot.rf_v1", "");
+    rf_version = GetProperty("ro.boot.rf_v1","");
 
     if (rf_version == "14") {
         /* Chinese */

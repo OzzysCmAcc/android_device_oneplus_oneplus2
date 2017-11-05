@@ -21,6 +21,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
@@ -52,29 +53,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.level-0.xml:system/etc/permissions/android.hardware.vulkan.level.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-  libbt-vendor \
-  android.hardware.bluetooth@1.0-impl
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hwui.texture_cache_size=72 \
-    ro.hwui.layer_cache_size=48 \
-    ro.hwui.r_buffer_cache_size=8 \
-    ro.hwui.path_cache_size=32 \
-    ro.hwui.gradient_cache_size=1 \
-    ro.hwui.drop_shadow_cache_size=6 \
-    ro.hwui.texture_cache_flushrate=0.4 \
-    ro.hwui.text_small_cache_width=1024 \
-    ro.hwui.text_small_cache_height=1024 \
-    ro.hwui.text_large_cache_width=2048 \
-    ro.hwui.text_large_cache_height=1024
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xxxhdpi-3072-hwui-memory.mk)
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -83,9 +67,20 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
+
 # Audio
 PRODUCT_PACKAGES += \
-    audiod \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl
+
+PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.primary.msm8994 \
     audio.r_submix.default \
@@ -93,16 +88,10 @@ PRODUCT_PACKAGES += \
     audio_policy.msm8994 \
     libaudio-resampler \
     libqcompostprocbundle \
+    libqcomvoiceprocessingdescriptors \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     tinymix
-
-PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.broadcastradio@1.0-impl \
-    android.hardware.radio.deprecated-V1.0-java \
-    android.hardware.soundtrigger@2.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/aanc_tuning_mixer.txt:system/etc/aanc_tuning_mixer.txt \
@@ -115,25 +104,29 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
     $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml
 
-# ANT+
+# Bluetooth
 PRODUCT_PACKAGES += \
-    AntHalService \
-    com.dsi.ant.antradio_library \
-    libantradio
+    android.hardware.bluetooth@1.0-impl
+
+PRODUCT_PACKAGES += \
+    libbt-vendor
 
 # Camera
+PRODUCT_PACKAGES += \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl
+
 PRODUCT_PACKAGES += \
     camera.msm8994 \
     libshim_camera \
     libshim_ims-camera \
     sensors.hal.tof \
-    android.hardware.camera.provider@2.4-impl-op2 \
     libshim_atomic \
     libop2_cam
 
 # DRM
 PRODUCT_PACKAGES += \
-	android.hardware.drm@1.0-impl
+    android.hardware.drm@1.0-impl
 
 # Display
 PRODUCT_PACKAGES += \
@@ -141,7 +134,9 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-service \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-impl
+
+PRODUCT_PACKAGES += \
     copybit.msm8994 \
     gralloc.msm8994 \
     hwcomposer.msm8994 \
@@ -150,8 +145,8 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 # Doze mode
-#PRODUCT_PACKAGES += \
-#    OneplusDoze
+PRODUCT_PACKAGES += \
+    OneplusDoze
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -161,14 +156,16 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service \
+    android.hardware.biometrics.fingerprint@2.0-service
+
+PRODUCT_PACKAGES += \
     fingerprint.msm8994
 
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
 
-# Gatekeeper HAL
+# Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl
 
@@ -196,10 +193,6 @@ PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
 
-# IRQ
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
-
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
@@ -209,14 +202,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020.kl:system/usr/keylayout/fpc1020.kl \
     $(LOCAL_PATH)/keylayout/synaptics.kl:system/usr/keylayout/synaptics.kl
 
-# Keymaster HAL
+# Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8994 \
     android.hardware.light@2.0-impl
+
+PRODUCT_PACKAGES += \
+    lights.msm8994
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -259,7 +254,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
+    android.hardware.power@1.0-impl
+
+PRODUCT_PACKAGES += \
     power.msm8994
 
 # Ramdisk
@@ -276,7 +273,7 @@ PRODUCT_PACKAGES += \
     init.zram.sh \
     ueventd.qcom.rc
 
-# RenderScript HAL
+# RenderScript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
@@ -286,15 +283,13 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
     rild_socket
-    
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    sensors.ssc.wrapper
+    android.hardware.sensors@1.0-impl
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sensors/hals.conf:system/vendor/etc/sensors/hals.conf
+PRODUCT_PACKAGES += \
+    sensors.ssc.wrapper
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -303,30 +298,30 @@ PRODUCT_COPY_FILES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service \
-    com.android.future.usb.accessory
+    android.hardware.usb@1.0-service
 
-# Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl
+    com.android.future.usb.accessory
 
 # VR
 PRODUCT_PACKAGES += \
     vr.msm8994
 
-# WiFi HAL
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
+# WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service
 
-# WiFi
 PRODUCT_PACKAGES += \
     ipacm \
     ipacm-diag \
     IPACM_cfg.xml \
+    wificond \
     hostapd \
     libwpa_client \
-    wificond \
-    wifilogd \
     wpa_supplicant \
     wpa_supplicant.conf
 
