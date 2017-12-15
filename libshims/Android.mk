@@ -54,6 +54,7 @@ LOCAL_C_INCLUDES += \
 	system/media/private/camera/include
 
 LOCAL_MODULE:= libshim_ims-camera
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -65,5 +66,6 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_32_BIT_ONLY := true
 LOCAL_SHARED_LIBRARIES := libgui libui
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
