@@ -834,7 +834,7 @@ service ipacm-diag /system/vendor/bin/ipacm-diag
     socket ipacm_log_file dgram 660 system net_admin
     group net_admin qcom_diag
 
-service ipacm /system/bin/vendor/ipacm
+service ipacm /system/vendor/bin/ipacm
     class main
     user net_admin
     group net_admin inet
