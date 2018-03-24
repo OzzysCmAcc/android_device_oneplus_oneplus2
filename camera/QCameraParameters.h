@@ -1,5 +1,4 @@
 /*
-**
 ** Copyright 2008, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +13,11 @@
 ** See the License for the specific language governing permissions and
 ** limitations under the License.
 */
+
 #ifndef ANDROID_HARDWARE_QCAMERA_PARAMETERS_H
 #define ANDROID_HARDWARE_QCAMERA_PARAMETERS_H
 
-//#include <utils/KeyedVector.h>
-//#include <utils/String8.h>
+// Camera dependencies
 #include <camera/CameraParameters.h>
 
 namespace android {
@@ -251,14 +250,6 @@ public:
     void getMeteringAreaCenter(int * x, int *y) const;
 
 };
-
-#define CAMERA_PARAMETERS_EXTRA_C \
-const char CameraParameters::KEY_APP_MASK[] = "app-mask"; \
-const char CameraParameters::PIXEL_FORMAT_YUV420SP_NV21[] = "nv21";
-
-#define CAMERA_PARAMETERS_EXTRA_H \
-    static const char KEY_APP_MASK[]; \
-    static const char PIXEL_FORMAT_YUV420SP_NV21[];
 
 }; // namespace android
 
