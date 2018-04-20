@@ -203,6 +203,47 @@ vendor/lib/libmmcamera_ov13860_eeprom.so
 vendor/lib/libmmcamera_ov5648.so
 vendor/lib/libmmcamera_ov5648_eeprom.so
 
+# CNE - MIUI Hydrogen 7.7.6 global dev
+bin/cnd:vendor/bin/cnd|20b03496c44800a4aae6d46f075a534945930753
+etc/cne/andsfCne.xml|f81a69eac5dd16bbb195a0fcf1211a51cc014553
+etc/cne/SwimConfig.xml|68dedcca1c2ac18cf81fdee1854de16a3a60dd02
+etc/cne/wqeclient/ATT/ATT_profile1.xml|c3072f14098d64c2e799423c046d71691b10af7a
+etc/cne/wqeclient/ATT/ATT_profile2.xml|03cfe4bece8231732411a48dfe80775745ddf216
+etc/cne/wqeclient/ATT/ATT_profile3.xml|278bb7464a9b7d90b9b07cbb99cbc88fce565f06
+etc/cne/wqeclient/ATT/ATT_profile4.xml|b39f12bf673db12f37b0f9b4f8a5384fcccbc92e
+etc/cne/wqeclient/ROW/ROW_profile1.xml|e92c4e8205ea97358a689c4846e9610a7b29d4d7
+etc/cne/wqeclient/ROW/ROW_profile2.xml|b5909abc79b538f6bb6fd557bf56aea368c533e0
+etc/cne/wqeclient/ROW/ROW_profile3.xml|01ef601c699dec8cd8f378de2ef213fb70f694cb
+etc/cne/wqeclient/ROW/ROW_profile4.xml|278bb7464a9b7d90b9b07cbb99cbc88fce565f06
+etc/cne/wqeclient/ROW/ROW_profile5.xml|d578513bd3116e589855cb6394041899eb8c0c47
+etc/cne/wqeclient/VZW/VZW_profile1.xml|c3072f14098d64c2e799423c046d71691b10af7a
+etc/cne/wqeclient/VZW/VZW_profile2.xml|35cd86254810c553631cd466faa53c88a35e663a
+etc/cne/wqeclient/VZW/VZW_profile3.xml|7f23ce13f9f2d5bd4505dca884618c50743fe05f
+etc/cne/wqeclient/VZW/VZW_profile4.xml|48ebd31efa0dbec1cc7fa97c2450cff4b0a89888
+etc/cne/wqeclient/VZW/VZW_profile5.xml|b83211b5285e929a193414da625af7fa26d96d5b
+etc/cne/wqeclient/VZW/VZW_profile6.xml|07acc779e901b0ffd7df97c42996ff68dccabddf
+etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
+etc/permissions/com.quicinc.cne.xml|e99e631d8b06ba4680529e9e4004d8d05baf6904
+etc/permissions/ConnectivityExt.xml|da7fd0d0da06933b19b657addd14e6858b73e13c
+framework/cneapiclient.jar|3cb56a579341acfb16d2be2e41bac2c7b6ac34b4
+framework/com.quicinc.cne.jar|83d1c4cba17999301d6a413e89cbda8fabdfe315
+framework/ConnectivityExt.jar|67025d09bbc7bb87bca1d15ab9c133eeb1ef2b9d
+-priv-app/CNEService/CNEService.apk|ab70049789270289b06e0378be83f15e3a2e93a9
+vendor/lib/libcne.so|add000b3a09bc5c10d2180c6def615a5bd57a4ce
+vendor/lib/libcneapiclient.so|a820af269a881036ee31a04a777c89099b672ad5
+vendor/lib/libcneqmiutils.so|e034af1900682a8f057b53c284e44ce7c70c6ac3
+vendor/lib/libvendorconn.so|2991c0905fc73d2f3c424abc415fd00ea12e0616
+vendor/lib/libwms.so|999f3f98b28e2474b1fb46e1c8ef5e68415b801c
+vendor/lib/libwqe.so|c72daf5bde9ef8df26acef8c48535abc376eb66b
+vendor/lib/libxml.so|4ab8a804dd094f8ebcfc803c62adfa642a3a0ae0
+vendor/lib64/libcne.so|0575d86ca49144b095394142d7c3fc1bdee36370
+vendor/lib64/libcneapiclient.so|509a1a1567f84e25ac8e06e7175d25f2b5178fec
+vendor/lib64/libcneqmiutils.so|8adca402f12775cc5f5616834bf26323f82731d6
+vendor/lib64/libvendorconn.so|fe23b80c7a3315896eaa8b4c4812b959c1dcf9d7
+vendor/lib64/libwms.so|498895e828a2bfbafc3bee423eb3b6713935267d
+vendor/lib64/libwqe.so|73d1341c75b7691acb4f98d7ca49f6475af2b4c4
+vendor/lib64/libxml.so|8e09a5e00007c0d79302207a9aeac03fc3db60e5
+
 # Display calibration - OxygenOS 3.6.0
 -etc/pp_calib_data_jd35695_1080p_cmd_mode_dsi_panel.xml
 
@@ -433,11 +474,8 @@ framework/QtiTelephonyServicelibrary.jar|7c1dd966c584e4f76cb9b7e14755d1f820bd3a9
 lib64/libparam.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|55eab7bdd59841e3622133eb736b536222231e82
 vendor/bin/qti
-vendor/lib/libcneapiclient.so
 -vendor/lib/libmdmdetect.so
-vendor/lib/libxml.so
 vendor/lib64/libconfigdb.so
-vendor/lib64/libcneapiclient.so
 vendor/lib64/liblqe.so
 -vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
@@ -446,7 +484,6 @@ vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libsystem_health_mon.so
-vendor/lib64/libxml.so
 vendor/qcril.db
 
 # Radio - IMS - OxygenOS 3.6.0 + OxygenOS 5.0 and OB32/OB22
