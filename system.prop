@@ -69,7 +69,8 @@ persist.data.mode=concurrent
 ro.data.large_tcp_window_size=true
 
 # Data Power Manager (DPM)
-persist.dpm.feature=0
+persist.dpm.feature=7
+persist.sys.dpmd.nsrm=3
 
 # Dex2oat limits
 dalvik.vm.boot-dex2oat-threads=4

@@ -247,6 +247,26 @@ vendor/lib64/libxml.so|8e09a5e00007c0d79302207a9aeac03fc3db60e5
 # Display calibration - OxygenOS 3.6.0
 -etc/pp_calib_data_jd35695_1080p_cmd_mode_dsi_panel.xml
 
+# DPM - MIUI Hydrogen 7.7.6 global dev
+bin/dpmd:vendor/bin/dpmd|845e7a704770e5c2362dea8056238ff265fbe867
+etc/dpm/dpm.conf|4044e359cfde5a4e8c1ef31a684b3009bca31058
+etc/dpm/nsrm/NsrmConfiguration.xml|c406e5aaaa4ab278a7f7b62405ad5d91c8084835
+etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
+etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
+framework/com.qti.dpmframework.jar|7d855e9cf5d10cd88cdcd9c9bd16120afcaa7e72
+framework/dpmapi.jar|0015235ff71d52d1b340b10ce4fa737fa26975ef
+framework/tcmclient.jar|e7149c664f4b1841139ab816c0d4e0942df0583c
+vendor/lib/libdpmctmgr.so|701639122d43f6c8cd404f7ffd84b2d898d85643
+vendor/lib/libdpmfdmgr.so|ab5fee12765bbe261eaf6dc5c2014abfa4db80e9
+vendor/lib/libdpmframework.so|532cb27a9c9a7920f47a096403d04301cd115f03
+vendor/lib/libdpmnsrm.so|1c10712d856628f607e6f1bfedc446bc7a79b1e9
+vendor/lib/libdpmtcm.so|93aa9fd3c61283102335199b44ca32334010dc84
+vendor/lib64/libdpmctmgr.so|a1b1758745984135102f72715a1be2dd375b984b
+vendor/lib64/libdpmfdmgr.so|347357ec9fd67683481947514f1081c33b026b72
+vendor/lib64/libdpmframework.so|a5ea561e85487bf77b5d4a2d75e94355da2bc925
+vendor/lib64/libdpmnsrm.so|afa28c07c865000741607e95c950929ad8a523f2
+vendor/lib64/libdpmtcm.so|0b76e348c7e381644d1950935d9e00c88af2a591
+
 # DRM - OxygenOS 3.6.0
 bin/qseecomd:vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
