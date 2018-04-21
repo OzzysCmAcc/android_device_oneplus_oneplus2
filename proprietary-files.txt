@@ -204,7 +204,7 @@ vendor/lib/libmmcamera_ov5648.so
 vendor/lib/libmmcamera_ov5648_eeprom.so
 
 # CNE - MIUI Hydrogen 7.7.6 global dev
-bin/cnd:vendor/bin/cnd|20b03496c44800a4aae6d46f075a534945930753
+bin/cnd:vendor/bin/cnd|81a576a53bbaad1396c5f95c864f3906627d0ad9
 etc/cne/andsfCne.xml|f81a69eac5dd16bbb195a0fcf1211a51cc014553
 etc/cne/SwimConfig.xml|68dedcca1c2ac18cf81fdee1854de16a3a60dd02
 etc/cne/wqeclient/ATT/ATT_profile1.xml|c3072f14098d64c2e799423c046d71691b10af7a
@@ -229,19 +229,19 @@ framework/cneapiclient.jar|3cb56a579341acfb16d2be2e41bac2c7b6ac34b4
 framework/com.quicinc.cne.jar|83d1c4cba17999301d6a413e89cbda8fabdfe315
 framework/ConnectivityExt.jar|67025d09bbc7bb87bca1d15ab9c133eeb1ef2b9d
 -priv-app/CNEService/CNEService.apk|ab70049789270289b06e0378be83f15e3a2e93a9
-vendor/lib/libcne.so|add000b3a09bc5c10d2180c6def615a5bd57a4ce
-vendor/lib/libcneapiclient.so|a820af269a881036ee31a04a777c89099b672ad5
+vendor/lib/libcne.so|f6bd53b910fefff3b009f9312ff72e2879731e70
+vendor/lib/libcneapiclient.so|9707a6bc3e69e0b9941f2068a495dc4ddab9715d
 vendor/lib/libcneqmiutils.so|e034af1900682a8f057b53c284e44ce7c70c6ac3
 vendor/lib/libvendorconn.so|2991c0905fc73d2f3c424abc415fd00ea12e0616
-vendor/lib/libwms.so|999f3f98b28e2474b1fb46e1c8ef5e68415b801c
-vendor/lib/libwqe.so|c72daf5bde9ef8df26acef8c48535abc376eb66b
+vendor/lib/libwms.so|ee7734ab49e34e0810c9e4238d478c4c20acfb58
+vendor/lib/libwqe.so|5e4955b455162f116985bd013236456e430aae3f
 vendor/lib/libxml.so|4ab8a804dd094f8ebcfc803c62adfa642a3a0ae0
-vendor/lib64/libcne.so|0575d86ca49144b095394142d7c3fc1bdee36370
-vendor/lib64/libcneapiclient.so|509a1a1567f84e25ac8e06e7175d25f2b5178fec
+vendor/lib64/libcne.so|61b9eb03d32dc07e6b33d5e1d1e74e04dd5c660f
+vendor/lib64/libcneapiclient.so|50e26cf87a26c4eca17d0d62732ebc84394f0787
 vendor/lib64/libcneqmiutils.so|8adca402f12775cc5f5616834bf26323f82731d6
 vendor/lib64/libvendorconn.so|fe23b80c7a3315896eaa8b4c4812b959c1dcf9d7
-vendor/lib64/libwms.so|498895e828a2bfbafc3bee423eb3b6713935267d
-vendor/lib64/libwqe.so|73d1341c75b7691acb4f98d7ca49f6475af2b4c4
+vendor/lib64/libwms.so|d8452db7ed4c68c71178597384f9617ccb259d35
+vendor/lib64/libwqe.so|44fce00fee97ab3f8f033c24e86ecde67e0c7fc8
 vendor/lib64/libxml.so|8e09a5e00007c0d79302207a9aeac03fc3db60e5
 
 # Display calibration - OxygenOS 3.6.0
