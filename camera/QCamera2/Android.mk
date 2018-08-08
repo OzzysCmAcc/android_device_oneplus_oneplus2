@@ -21,18 +21,6 @@ LOCAL_SRC_FILES += \
         HAL3/QCamera3PostProc.cpp \
         HAL3/QCamera3CropRegionMapper.cpp
 
-#HAL 1.0 source
-LOCAL_SRC_FILES += \
-        HAL/QCamera2HWI.cpp \
-        HAL/QCameraMem.cpp \
-        HAL/QCameraStateMachine.cpp \
-        HAL/QCameraChannel.cpp \
-        HAL/QCameraStream.cpp \
-        HAL/QCameraPostProc.cpp \
-        HAL/QCamera2HWICallbacks.cpp \
-        HAL/QCameraParameters.cpp \
-        HAL/QCameraThermalAdapter.cpp
-
 LOCAL_CFLAGS := -Wall -Wextra -Werror -Wno-format -Wno-gnu-designator -Wno-unused-parameter -Wno-unused-variable -Wno-unused-private-field -Wno-unused-label -Wno-tautological-pointer-compare
 LOCAL_CFLAGS += -DHAS_MULTIMEDIA_HINTS
 
@@ -56,9 +44,9 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../mm-image-codec/qexif \
         $(LOCAL_PATH)/../mm-image-codec/qomx_core \
         $(LOCAL_PATH)/util \
-        hardware/qcom/media-caf/msm8994/libstagefrighthw \
+        hardware/qcom/media/msm8994/libstagefrighthw \
         device/qcom/common/power \
-	frameworks/native/libs/nativewindow/include \
+	    frameworks/native/libs/nativewindow/include \
         $(call include-path-for, android.hidl.token@1.0-utils) \
         $(call include-path-for, android.hardware.graphics.bufferqueue@1.0)
 
@@ -78,7 +66,7 @@ LOCAL_C_INCLUDES += \
 
 LOCAL_SHARED_LIBRARIES := liblog libcamera_client liblog libhardware libutils libcutils libdl
 LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
-LOCAL_SHARED_LIBRARIES += libqdMetaData libqdutils libnativewindow
+LOCAL_SHARED_LIBRARIES += libnativewindow
 LOCAL_SHARED_LIBRARIES += android.hidl.token@1.0-utils
 LOCAL_SHARED_LIBRARIES += android.hardware.graphics.bufferqueue@1.0
 
